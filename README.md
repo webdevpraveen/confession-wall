@@ -8,7 +8,7 @@ This project focuses on **psychological safety**, **simplicity**, and **live int
 
 ##  Project Vision
 
-Many people—especially students—have thoughts they cannot easily express in public or on traditional social media.
+Many people especially students have thoughts they cannot easily express in public or on traditional social media.
 
 This project aims to create a **low-pressure digital space** where:
 - identity is not required
@@ -110,7 +110,6 @@ Large changes should be discussed before implementation to keep the project alig
 
 > Say what you cannot say out loud.  
 > Stay anonymous.  
-> Stay human.
 
 ---
 
