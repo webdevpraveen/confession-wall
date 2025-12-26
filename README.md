@@ -112,7 +112,6 @@ Large changes should be discussed before implementation to keep the project alig
 > Stay anonymous.  
 
 ---
+## Expected Outcomes
 
-##  License
-
-This project will use an open-source license (to be finalized).
+<img width="1059" height="1054" alt="image" src="https://github.com/user-attachments/assets/0b6cab41-3dd6-4462-ac99-45e769ca2f3d" />
