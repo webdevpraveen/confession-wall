@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 30 30% 92%;
+    --foreground: 25 30% 15%;
+
+    --card: 45 100% 94%;
+    --card-foreground: 25 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 30% 15%;
+
+    --primary: 25 80% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 60% 88%;
+    --secondary-foreground: 25 30% 15%;
+
+    --muted: 30 20% 85%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 340 70% 75%;
+    --accent-foreground: 25 30% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 30 20% 80%;
+    --input: 30 20% 85%;
+    --ring: 25 80% 50%;
+
+    --radius: 0.5rem;
+
+    /* Sticky note colors */
+    --note-yellow: 48 100% 88%;
+    --note-pink: 340 80% 88%;
+    --note-blue: 200 80% 88%;
+    --note-green: 140 60% 85%;
+    --note-orange: 25 90% 85%;
+    --note-purple: 280 60% 88%;
+
+    /* Cork board */
+    --cork: 30 35% 65%;
+    --cork-dark: 28 30% 50%;
+
+    /* Shadows */
+    --shadow-note: 0 4px 12px hsl(25 30% 15% / 0.15);
+    --shadow-note-hover: 0 8px 24px hsl(25 30% 15% / 0.25);
+
+    --font-handwriting: 'Caveat', cursive;
+    --font-sans: 'Inter', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 25 20% 12%;
+    --foreground: 45 30% 92%;
+
+    --card: 25 25% 18%;
+    --card-foreground: 45 30% 92%;
+
+    --popover: 25 25% 15%;
+    --popover-foreground: 45 30% 92%;
+
+    --primary: 25 80% 55%;
+    --primary-foreground: 25 20% 10%;
+
+    --secondary: 25 20% 22%;
+    --secondary-foreground: 45 30% 92%;
+
+    --muted: 25 15% 25%;
+    --muted-foreground: 30 15% 60%;
+
+    --accent: 340 60% 65%;
+    --accent-foreground: 45 30% 92%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 15% 25%;
+    --input: 25 15% 25%;
+    --ring: 25 80% 55%;
+
+    --note-yellow: 48 70% 25%;
+    --note-pink: 340 50% 30%;
+    --note-blue: 200 50% 28%;
+    --note-green: 140 40% 25%;
+    --note-orange: 25 60% 28%;
+    --note-purple: 280 40% 28%;
+
+    --cork: 25 20% 18%;
+    --cork-dark: 25 15% 12%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-sans);
+  }
+
+  .font-handwriting {
+    font-family: var(--font-handwriting);
+  }
+}
+
+@layer components {
+  .cork-board {
+    background: 
+      radial-gradient(circle at 20% 30%, hsl(var(--cork)) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsl(var(--cork-dark)) 0%, transparent 50%),
+      linear-gradient(135deg, hsl(var(--cork)) 0%, hsl(var(--cork-dark)) 100%);
+    background-size: 100% 100%, 100% 100%, 100% 100%;
+  }
+
+  .sticky-note {
+    @apply relative p-4 rounded-sm transition-all duration-300 cursor-pointer;
+    box-shadow: var(--shadow-note);
+    transform-origin: center top;
+  }
+
+  .sticky-note:hover {
+    box-shadow: var(--shadow-note-hover);
+    transform: scale(1.02) rotate(0deg) !important;
+    z-index: 10;
+  }
+
+  .sticky-note::before {
+    content: '';
+    @apply absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-3 rounded-sm;
+    background: hsl(var(--cork-dark) / 0.6);
+    box-shadow: 0 2px 4px hsl(25 30% 15% / 0.2);
+  }
+
+  .sticky-yellow { background: hsl(var(--note-yellow)); }
+  .sticky-pink { background: hsl(var(--note-pink)); }
+  .sticky-blue { background: hsl(var(--note-blue)); }
+  .sticky-green { background: hsl(var(--note-green)); }
+  .sticky-orange { background: hsl(var(--note-orange)); }
+  .sticky-purple { background: hsl(var(--note-purple)); }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-2deg); }
+    75% { transform: rotate(2deg); }
+  }
+
+  .animate-pop-in {
+    animation: popIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  @keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+}
