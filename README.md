@@ -105,13 +105,6 @@ This repository is open to:
 Large changes should be discussed before implementation to keep the project aligned with its core vision.
 
 ---
-
-##  Philosophy
-
-> Say what you cannot say out loud.  
-> Stay anonymous.  
-
----
 ## Expected Outcomes
 
 <img width="1059" height="1054" alt="image" src="https://github.com/user-attachments/assets/0b6cab41-3dd6-4462-ac99-45e769ca2f3d" />
